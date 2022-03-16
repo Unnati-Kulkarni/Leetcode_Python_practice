@@ -14,15 +14,11 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
-        without_space = s.replace(" ","")
+        s = s.replace(" ","")
         res = ''
         
         for i in range(len(s)):
-            let = s[i]
-            if let.isalnum():
-                res += let
+            if s[i].isalnum():
+                res += s[i]
             
-        if res[:] == res[::-1]:
-            return True
-        else:
-            return False
+        return res[:] == res[::-1]
