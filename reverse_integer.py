@@ -25,3 +25,31 @@ class Solution:
         else:
             return 0
         
+#Another method:
+
+class Solution:
+    def reverse(self, x: int) -> int:
+         if x in range((-2 ** 31), (2 ** 31)):
+                if x < 0:
+                    flag = False
+                    x = -1 * x
+                else:
+                    flag = True
+                    
+                rev = 0
+                
+                while(x != 0):
+                    rem = x % 10
+                    rev = rev * 10 + rem
+                    x = x // 10
+                
+                if rev in range((-2 ** 31), (2 ** 31)):
+                    if flag:
+                        return rev
+                    else:
+                        return -1*rev
+                else:
+                    return 0
+                    
+         else:
+            return 0
